@@ -1,56 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// char check(int n){
-//     int i = 0;
-//     int prime = 0;
-//     int odd = 0;   
-    
-//     if (n % 2 == 0)
-//     {
-//         odd++;
-//     }
-    
-
-//     for (i = 2; i < n/2; i++)
-//     {
-//         if (n % i == 0)
-//         {
-//             prime++;
-//         }
-        
-//     }
-
-//     if (odd == 0 || prime == 0)
-//     {
-//         return 'T';
-//     } else {
-//         return 'F';
-//     }
-    
-    
-// }
-
-int main()
-{
-    int i = 0, j = 0;
+int main(){
     int n = 0;
+    int i = 0, j = 0, k = 0;
     scanf("%d", &n);
 
-    int num[n];
+    char (*a)[1100] = malloc(n * sizeof(char[1100])); 
+    int *count = (int *)malloc(sizeof(int) * n);
 
     for (i = 0; i < n; i++)
     {
-        scanf("%d", &num[i]);
+        scanf("%s", a[i]);
+        count[i] = strlen(a[i]);
     }
 
-    for (i = 0; i < n; i++)
+    i = 0;
+    j = 0;
+    while (i < n)
     {
-       if (num[i] % 2 == 0 && num[i] != 2)
-       {
-        printf("F\n");
-       } else {
-        printf("T\n");
-       }
-       
+        if ((a[i][count[j] - 1] - '0') % 2 == 0)
+        {
+            printf("F\n");
+        } else if (count[j] == 1 && a[i][count[j] - 1] - '0' == 2) printf("T\n");
+        else {
+            printf("T\n");
+        }
+        i++;
+        j++;
     }
-}
+
+    free(count);
+    free(a);
+ }

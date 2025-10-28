@@ -1,42 +1,18 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
-    int n = 0, i = 0, j = 0;
+  int i = 0 , j =  0;
+  char a[10000];
 
-    scanf("%d", &n);
+  fgets(a,sizeof(a),stdin);
 
-    int dun[n];
-    int count = 0;
-    int temp = 0;
-
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &dun[i]);
+  for(i = 0; a[i] != '\0'; i++){
+    if(a[i] >= 'a' && a[i] <= 'z'){
+      a[i] -= 32;
     }
+  }
 
-    for (i = 0; i < n; i++)
-    {
-
-        if (dun[i] > i)
-        {
-            i = dun[i] - 1;
-                count++;
-        } else if (dun[i] < i && i != n - 1)
-        {
-            temp  = dun[i] - 1;
-            if(dun[temp] > temp){
-                i = dun[temp] - 1;
-                count++;
-            }
-        }
-        
-        else if (i != n - 1)
-        {
-            count++;
-        }
-
-        // printf("This is iteration %d\n", i);
-    }
-    printf("%d", count);
+  printf("%s", a);
 }
