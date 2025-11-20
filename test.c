@@ -1,18 +1,35 @@
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-  int i = 0 , j =  0;
-  char a[10000];
+	int i = 0;
+	int a = 0, b = 0;
+	int remain = 0;
+	scanf("%d %d", &a, &b);
 
-  fgets(a,sizeof(a),stdin);
-
-  for(i = 0; a[i] != '\0'; i++){
-    if(a[i] >= 'a' && a[i] <= 'z'){
-      a[i] -= 32;
-    }
-  }
-
-  printf("%s", a);
+	if (a < b)
+	{
+		for (i = a; i < b; i++)
+		{
+			if (b % i == 0)
+			{
+				remain = i;
+			}
+		}
+	}
+	else
+	{
+		for (i = b; i < a; i++)
+		{
+			if (a % i == 0)
+			{
+				remain = i;
+			}
+		}
+	}
+	printf("%d %d\n%d, a, b, remain");
 }
+
+
+
+// Tips:  Run for check input format

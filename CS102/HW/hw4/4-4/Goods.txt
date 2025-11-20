@@ -1,0 +1,12 @@
+5201 	Computer		C	19000.00
+5202	Pen		A	257.00
+5203	Refrigerator	B	7895.00
+5204	Chair		B	1285.00
+5205	Table		B	1800.00
+5206	Swing		B	9900.00
+5207	Scanner		C	3750.00
+5208	Printer		C	5500.00
+5209	Photo paper	D	795.00
+5210	Ruler		A	40.00
+5211	DVD-R		D	565.00
+5212	DVD-RW		D	990.00
